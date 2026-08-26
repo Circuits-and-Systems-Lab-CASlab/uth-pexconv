@@ -1,0 +1,3 @@
+[submodule "external/openroad"]
+	path = external/openroad
+	url = https://github.com/The-OpenROAD-Project/OpenROAD

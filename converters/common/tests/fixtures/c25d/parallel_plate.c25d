@@ -1,0 +1,47 @@
+### C25D 1.0 test pattern: parallel_plate
+### Purpose: closed-form capacitance validation for C25D_parser.py.
+### Single top plate over an infinite ground plane, uniform background
+### dielectric (no SIMPLE/SIDEWALL/CONFORMAL layers), so there is no
+### epsilon-resolution ambiguity in this first test, only GROUND_PLANE, METAL,
+### DIELECTRIC_BACKGROUND, CONDUCTOR, BOX, and DOMAIN_MARGIN.
+###
+### Geometry (chosen for a clean closed-form comparison):
+###   plate area A = 50um x 50um = 2500 um^2
+###   separation  d = 2um (ground plane top at z=0, plate bottom at z=2.0)
+###   background permittivity epsr = 4.0
+###   closed-form target: C = eps0 * epsr * A / d = 44.2709 fF
+
+C25D 1.0
+UNITS LENGTH um
+
+META technology test_synthetic
+META source_cell parallel_plate
+
+#---------------- GROUND PLANE ----------------
+# Infinite XY conductor at 0V, occupies -0.100 <= z <= 0.000.
+GROUND_PLANE SUB Z_OFFSETS -0.100 0.000
+
+#---------------- LAYER (metal) ----------------
+# Top plate sits on this layer. 2.000um gap from ground plane top (z=0)
+# to layer bottom (z=2.000) gives the separation d used in the closed-form
+# target above.
+METAL M1 Z_OFFSETS 2.000 2.050
+
+#---------------- DIELECTRICS ----------------
+# No DIELECTRIC_SIMPLE/SIDEWALL/CONFORMAL layers - background alone fills
+# all volume not occupied by the ground plane or the plate conductor,
+# so the entire gap between plates is uniformly epsr = 4.0.
+DIELECTRIC_BACKGROUND diel PERMITTIVITY 4.000
+
+#---------------- NETS and SHAPES ----------------
+# Single conductor: PLATE. Capacitance matrix will report its
+# self-capacitance to the (implicit 0V) ground plane.
+CONDUCTOR PLATE PLATE.net
+
+# 50um x 50um square, centered at origin.
+BOX CONDUCTOR PLATE LAYER M1 LL -25.000 -25.000 UR 25.000 25.000
+
+#---------------- DOMAIN ----------------
+# Generous margin relative to plate size/separation so the finite
+# computational boundary doesn't perturb the near-field result.
+DOMAIN_MARGIN X 20.000 Y 20.000 Z 20.000

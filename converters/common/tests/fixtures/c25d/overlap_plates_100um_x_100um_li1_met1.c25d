@@ -1,0 +1,57 @@
+### C25D 1.0 test pattern: overlap_plates_100um_x_100um_li1_met1
+### Modeled on klayout-pex's own test pattern
+### testdata/designs/sky130A/test_patterns/overlap_plates_100um_x_100um_li1_m1.gds.gz
+### (see https://github.com/iic-jku/klayout-pex/issues/184 for the real
+### sky130A layer stack this is drawn from).
+###
+### Two 100um x 100um plates, fully overlapping in XY, on li1 and met1 -
+### validates the zero-GROUND_PLANE / two-different-metal-layer code path
+### in C25D2FasterCap.py (no ground-plane emulation needed here, unlike
+### parallel_plate.c25d).
+###
+### Real li1/met1 Z heights from the C25D issue's own sky130A example:
+###   li1:  Z_OFFSETS 0.9361 1.0111  (thickness 0.075um)
+###   met1: Z_OFFSETS 1.3761 1.7361  (thickness 0.360um)
+###   gap between li1 top and met1 bottom: 0.365um
+###
+### NOTE ON DIELECTRIC: the real sky130A stack in this gap uses
+### DIELECTRIC_CONFORMAL (LINT) and DIELECTRIC_SIMPLE (NILD2) layers with
+### varying permittivity (3.5-7.3) - not yet supported by
+### C25D2FasterCap.py (see its module docstring). This fixture uses a
+### single uniform DIELECTRIC_BACKGROUND (epsr=4.1, sky130A's base oxide
+### value) as an approximation until that support is added. Do NOT treat
+### any capacitance computed from this fixture as physically accurate for
+### sky130A - it's a converter/geometry validation fixture, not a process
+### model.
+###
+### NOTE ON SOLVER DIFFICULTY: 100um plates with only a 0.365um gap is an
+### aspect ratio of ~274:1 - likely at least as hard for FasterCap to
+### converge as parallel_plate_tight_margin.c25d's 25:1 case, possibly
+### harder. If this doesn't converge cleanly, consider a variant with a
+### smaller plate size before assuming there's a converter bug.
+
+C25D 1.0
+UNITS LENGTH um
+
+META technology test_synthetic_based_on_sky130A
+META source_cell overlap_plates_100um_x_100um_li1_met1
+
+#---------------- LAYER (metal) ----------------
+METAL li1  Z_OFFSETS 0.9361 1.0111
+METAL met1 Z_OFFSETS 1.3761 1.7361
+
+#---------------- DIELECTRICS ----------------
+# Approximation only - see NOTE ON DIELECTRIC above.
+DIELECTRIC_BACKGROUND diel PERMITTIVITY 4.100
+
+#---------------- NETS and SHAPES ----------------
+CONDUCTOR A A.net
+BOX CONDUCTOR A LAYER li1 LL -50.000 -50.000 UR 50.000 50.000
+
+CONDUCTOR B B.net
+BOX CONDUCTOR B LAYER met1 LL -50.000 -50.000 UR 50.000 50.000
+
+#---------------- DOMAIN ----------------
+# XY margin generous relative to the 100um plates; Z margin modest
+# relative to the ~0.8um total feature height (li1 bottom to met1 top).
+DOMAIN_MARGIN X 20.000 Y 20.000 Z 2.000

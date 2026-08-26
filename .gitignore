@@ -1,0 +1,15 @@
+TYP/
+examples/raphael-conversion/output/
+examples/fastercap-conversion/output/
+__pycache__/
+*.pyc
+patternFiles.TYP
+process.out
+resistance.TYP
+rulesGen.log
+test/
+2.0/
+local/
+converters/raphael
+examples/raphael-conversion
+.pytest_cache

@@ -1,0 +1,8 @@
+* 2.1x0.35x2.8um box
+* Layer of Box Dielectric m1_2
+* face name	| four coordinates of one face
+
+Q dielectric_m1_2  0.0 0.0 0.0     0.0 0.35 0.0     2.1 0.35 0.0     2.1 0.0 0.0
+Q dielectric_m1_2  0.0 0.0 0.0     0.0 0.0 2.8     0.0 0.35 2.8     0.0 0.35 0.0
+Q dielectric_m1_2  2.1 0.0 0.0     2.1 0.0 2.8     2.1 0.35 2.8     2.1 0.35 0.0
+Q dielectric_m1_2  0.0 0.0 2.8     0.0 0.35 2.8     2.1 0.35 2.8     2.1 0.0 2.8

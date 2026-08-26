@@ -1,0 +1,5 @@
+* 0.14x0.15x1.4um box
+* Layer of Box wire M1_w2
+* face name	| four coordinates of one face
+
+Q wire_M1_w2  0.0 0.15 0.0     0.14 0.15 0.0     0.14 0.15 1.4     0.0 0.15 1.4

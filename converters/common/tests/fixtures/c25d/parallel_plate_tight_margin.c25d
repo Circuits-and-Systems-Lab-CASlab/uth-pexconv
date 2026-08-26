@@ -1,0 +1,43 @@
+### C25D 1.0 test pattern: parallel_plate_tight_margin
+### Same geometry as parallel_plate.c25d - only DOMAIN_MARGIN is smaller
+### (5um instead of 20um), to reduce the ground plane panel's area and
+### cut FasterCap's refinement cost for a faster real solver run.
+###
+### Do NOT use this file for C25D_parser.py / C25D2FasterCap.py pytest
+### regression tests - those are written against parallel_plate.c25d's
+### specific domain values (domain box -45..45, 90x90um ground plane
+### panel etc.). This file is for actual FasterCap solves only.
+###
+### Geometry (unchanged from parallel_plate.c25d):
+###   plate area A = 50um x 50um = 2500 um^2
+###   separation  d = 2um
+###   background permittivity epsr = 4.0
+###   closed-form target: C = eps0 * epsr * A / d = 44.2709 fF
+###     (fringing-free reference - solver output should land somewhat
+###     above this since the plate is finite, not infinite)
+
+C25D 1.0
+UNITS LENGTH um
+
+META technology test_synthetic
+META source_cell parallel_plate_tight_margin
+
+#---------------- GROUND PLANE ----------------
+GROUND_PLANE SUB Z_OFFSETS -0.100 0.000
+
+#---------------- LAYER (metal) ----------------
+METAL M1 Z_OFFSETS 2.000 2.050
+
+#---------------- DIELECTRICS ----------------
+DIELECTRIC_BACKGROUND diel PERMITTIVITY 4.000
+
+#---------------- NETS and SHAPES ----------------
+CONDUCTOR PLATE PLATE.net
+BOX CONDUCTOR PLATE LAYER M1 LL -25.000 -25.000 UR 25.000 25.000
+
+#---------------- DOMAIN ----------------
+# Reduced from 20um to 5um: domain becomes 60x60um (vs 90x90um before),
+# a ~2.2x smaller ground-plane panel area. Still 2.5x the plate size, so
+# it shouldn't meaningfully change the physics compared to the 20um case
+# - just less area for the solver to refine while approaching the plate.
+DOMAIN_MARGIN X 5.000 Y 5.000 Z 5.000

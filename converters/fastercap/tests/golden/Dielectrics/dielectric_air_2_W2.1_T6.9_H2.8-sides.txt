@@ -1,0 +1,8 @@
+* 2.1x6.9x2.8um box
+* Layer of Box Dielectric air_2
+* face name	| four coordinates of one face
+
+Q dielectric_air_2  0.0 0.0 0.0     0.0 6.9 0.0     2.1 6.9 0.0     2.1 0.0 0.0
+Q dielectric_air_2  0.0 0.0 0.0     0.0 0.0 2.8     0.0 6.9 2.8     0.0 6.9 0.0
+Q dielectric_air_2  2.1 0.0 0.0     2.1 0.0 2.8     2.1 6.9 2.8     2.1 6.9 0.0
+Q dielectric_air_2  0.0 0.0 2.8     0.0 6.9 2.8     2.1 6.9 2.8     2.1 0.0 2.8
