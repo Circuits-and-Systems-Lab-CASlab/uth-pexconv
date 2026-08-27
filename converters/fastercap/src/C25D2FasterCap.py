@@ -44,6 +44,7 @@ def write_ground_plane(currentpath, fastercap_file, scene, domain_box, epsilon_s
     # Ground plane spans the full domain XY extent 
     thickness = round(ground_plane.zhigh - ground_plane.zlow, 6)
     height = ury - lly    
+    width = urx - llx
     offx, offy, offz = llx, ground_plane.zlow, lly
 
     outward_facing_epsilon = round(OUTWARD_FACING_RELATIVE_PERMITTIVITY * epsilon_scale, 14)
