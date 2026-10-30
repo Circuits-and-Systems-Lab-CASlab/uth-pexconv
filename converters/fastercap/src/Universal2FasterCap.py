@@ -482,6 +482,8 @@ def TranslateUniversalFile(Universalfilename: str, FasterCapfilename: str, mode:
             LLcornerz = window_min_y
             processDielectrics.append(Dielectrics(shapename, shapethickness, dielectric.epsilon))
             PatternShapes.append(Shapes(shapename, shapeorder, shapeheight, shapethickness, shapewidth, LLcornerx, LLcornery, LLcornerz, shapetype))
+            # kept on the shape, as processDielectrics grows across patterns #
+            PatternShapes[-1].epsilon = dielectric.epsilon
 
           for groundplane in tempgroundplanes:
             # Ground planes also span the full window width, at their own
@@ -520,7 +522,8 @@ def TranslateUniversalFile(Universalfilename: str, FasterCapfilename: str, mode:
 
           # print(base_epsilon)
 
-          extractFasterCapfile(TempFasterCapfilename)
+          # extractFasterCapfile() is the previous row-scan writer #
+          extractFasterCapfile_layered(TempFasterCapfilename)
           # clear data global data structure #
           PatternShapes.clear()
         elif (mode == 2): # 2D MODE #
@@ -1970,6 +1973,177 @@ def extractFasterCapfile(filename: str):
 
         FasterCapFile.write("\n\n")
     dielindex += 1
+
+  FasterCapFile.close()
+
+# Layered 3D writer #
+# Every surface is written once:
+#   - the interface between two dielectrics, over the whole window, minus the
+#     footprints of the conductors at that height
+#   - the window walls of each dielectric, vacuum outside, minus the faces of
+#     conductors lying on the wall
+#   - each conductor face, split at the dielectric heights, with the
+#     permittivity of the medium in front of it
+# Coordinates follow PatternShapes: x = x, y = height, z = length.
+LAYERED_TOLERANCE = 1e-6
+LAYERED_PROBE = 1e-4 # distance of the point probed in front of a face #
+LAYERED_VOID = 1.0e-6 # vacuum, permittivities are scaled by 1e-6 (um geometry) #
+
+def layered_scaled_epsilon(epsilon):
+  return round(float(epsilon) * float(1e-6), 8)
+
+def layered_split_rectangle(u0, u1, v0, v1, holes):
+  # Rectangle [u0, u1] x [v0, v1] minus the rectangles in holes, as a list
+  # of rectangles on the grid of all hole edges #
+  us = sorted({u0, u1} | {u for hole in holes for u in hole[0:2] if u0 < u < u1})
+  vs = sorted({v0, v1} | {v for hole in holes for v in hole[2:4] if v0 < v < v1})
+  cells = []
+  for i in range(len(us) - 1):
+    for j in range(len(vs) - 1):
+      cu = (us[i] + us[i + 1]) / 2
+      cv = (vs[j] + vs[j + 1]) / 2
+      if not any(hole[0] < cu < hole[1] and hole[2] < cv < hole[3] for hole in holes):
+        cells.append((us[i], us[i + 1], vs[j], vs[j + 1]))
+  return cells
+
+def layered_medium(domain, layers, x, y, z):
+  # Scaled permittivity at a point: vacuum outside the window, otherwise the
+  # dielectric at height y #
+  x0, x1, y0, y1, z0, z1 = domain
+  if not (x0 < x < x1 and y0 < y < y1 and z0 < z < z1):
+    return LAYERED_VOID
+  for ylow, yhigh, epsilon, name in layers:
+    if ylow <= y < yhigh:
+      return epsilon
+  return LAYERED_VOID
+
+def layered_quad_xz(x0, x1, z0, z1, y):
+  return [(x0, y, z0), (x1, y, z0), (x1, y, z1), (x0, y, z1)]
+
+def layered_quad_zy(z0, z1, y0, y1, x):
+  return [(x, y0, z0), (x, y1, z0), (x, y1, z1), (x, y0, z1)]
+
+def layered_quad_xy(x0, x1, y0, y1, z):
+  return [(x0, y0, z), (x1, y0, z), (x1, y1, z), (x0, y1, z)]
+
+def layered_write_panels(filename, name, quads):
+  # One panel file in absolute coordinates, inserted with offset 0 0 0 #
+  file = open(os.path.join(currentpath, filename), "w+")
+  file.write("* {}\n".format(name))
+  file.write("* face name	| four coordinates of one face\n\n")
+  for quad in quads:
+    file.write("Q {}  ".format(name) + "     ".join("{} {} {}".format(*point) for point in quad) + "\n")
+  file.close()
+
+def layered_conductor_faces(box, domain, layers):
+  # Faces of a conductor box grouped by the scaled permittivity in front of
+  # them, probed at a point just outside each face #
+  x0, x1, y0, y1, z0, z1 = box
+  cx, cz = (x0 + x1) / 2, (z0 + z1) / 2
+  faces_and_probes = [
+    (layered_quad_xz(x0, x1, z0, z1, y0), (cx, y0 - LAYERED_PROBE, cz)), # bottom #
+    (layered_quad_xz(x0, x1, z0, z1, y1), (cx, y1 + LAYERED_PROBE, cz)), # top #
+  ]
+
+  # vertical faces, split at every dielectric height #
+  heights = sorted({y0, y1} | {y for layer in layers for y in layer[0:2] if y0 < y < y1})
+  for ya, yb in zip(heights[:-1], heights[1:]):
+    cy = (ya + yb) / 2
+    faces_and_probes += [
+      (layered_quad_zy(z0, z1, ya, yb, x0), (x0 - LAYERED_PROBE, cy, cz)),
+      (layered_quad_zy(z0, z1, ya, yb, x1), (x1 + LAYERED_PROBE, cy, cz)),
+      (layered_quad_xy(x0, x1, ya, yb, z0), (cx, cy, z0 - LAYERED_PROBE)),
+      (layered_quad_xy(x0, x1, ya, yb, z1), (cx, cy, z1 + LAYERED_PROBE)),
+    ]
+
+  faces = {}
+  for quad, probe in faces_and_probes:
+    faces.setdefault(layered_medium(domain, layers, *probe), []).append(quad)
+  return faces
+
+def extractFasterCapfile_layered(filename: str):
+  for folder in ("Dielectrics", "Wires"):
+    if (not os.path.exists(os.path.join(currentpath, folder))):
+      os.makedirs(os.path.join(currentpath, folder))
+
+  # panel files of all patterns share Dielectrics/ and Wires/ #
+  prefix = os.path.relpath(os.path.dirname(filename), currentpath).replace(os.sep, "_")
+
+  dielectrics = sorted([shape for shape in PatternShapes if shape.shapetype == 0], key=attrgetter('shapey'))
+  conductors = [shape for shape in PatternShapes if shape.shapetype == 1]
+  if len(dielectrics) == 0:
+    print(f"ERROR! {filename}: no DIELECTRIC, the layered writer needs at least one")
+    sys.exit(-2)
+
+  layers = []
+  for shape in dielectrics:
+    ylow = round(shape.shapey, 6)
+    yhigh = round(shape.shapey + shape.shapethickness, 6)
+    layers.append((ylow, yhigh, layered_scaled_epsilon(shape.epsilon), shape.name))
+
+  first = dielectrics[0]
+  x0 = round(first.shapex, 6)
+  x1 = round(first.shapex + first.shapewidth, 6)
+  z0 = round(first.shapez, 6)
+  z1 = round(first.shapez + first.shapeheight, 6)
+  domain = (x0, x1, layers[0][0], layers[-1][1], z0, z1)
+  xmid, zmid = (x0 + x1) / 2, (z0 + z1) / 2
+
+  boxes = []
+  for shape in conductors:
+    boxes.append((shape.name, (round(shape.shapex, 6), round(shape.shapex + shape.shapewidth, 6),
+                               round(shape.shapey, 6), round(shape.shapey + shape.shapethickness, 6),
+                               round(shape.shapez, 6), round(shape.shapez + shape.shapeheight, 6))))
+
+  FasterCapFile = open(filename, "w+")
+
+  # Conductors: one C record per permittivity in front of the faces
+  for name, box in boxes:
+    faces = layered_conductor_faces(box, domain, layers)
+    records = []
+    for index, (epsilon, quads) in enumerate(sorted(faces.items())):
+      conductorfile = "Wires/{}_{}_{}.txt".format(prefix, name, index)
+      layered_write_panels(conductorfile, name, quads)
+      records.append("C {}/{}   {}    0.0 0.0 0.0 ".format(currentpath, conductorfile, epsilon))
+    FasterCapFile.write(" + \n".join(records) + "\n\n")
+
+  # Dielectrics
+  for index, (ylow, yhigh, epsilon, name) in enumerate(layers):
+    reference = (xmid, (ylow + yhigh) / 2, zmid) # a point inside this dielectric #
+
+    # bottom of the window, unless a conductor (the ground plane) covers it #
+    if index == 0:
+      holes = [(b[0], b[1], b[4], b[5]) for _, b in boxes if b[2] - LAYERED_TOLERANCE <= ylow <= b[3] + LAYERED_TOLERANCE]
+      quads = [layered_quad_xz(*cell, ylow) for cell in layered_split_rectangle(x0, x1, z0, z1, holes)]
+      if quads:
+        dielectricfile = "Dielectrics/{}_{}-bottom.txt".format(prefix, name)
+        layered_write_panels(dielectricfile, name, quads)
+        panel_io.insert_dielectric_into_pattern_file(currentpath, FasterCapFile, dielectricfile, LAYERED_VOID, epsilon, 0.0, 0.0, 0.0, *reference)
+
+    # window walls, vacuum outside #
+    quads = []
+    for x in (x0, x1):
+      holes = [(b[4], b[5], b[2], b[3]) for _, b in boxes if abs(b[0] - x) < LAYERED_TOLERANCE or abs(b[1] - x) < LAYERED_TOLERANCE]
+      quads += [layered_quad_zy(*cell, x) for cell in layered_split_rectangle(z0, z1, ylow, yhigh, holes)]
+    for z in (z0, z1):
+      holes = [(b[0], b[1], b[2], b[3]) for _, b in boxes if abs(b[4] - z) < LAYERED_TOLERANCE or abs(b[5] - z) < LAYERED_TOLERANCE]
+      quads += [layered_quad_xy(*cell, z) for cell in layered_split_rectangle(x0, x1, ylow, yhigh, holes)]
+    if quads:
+      dielectricfile = "Dielectrics/{}_{}-sides.txt".format(prefix, name)
+      layered_write_panels(dielectricfile, name, quads)
+      panel_io.insert_dielectric_into_pattern_file(currentpath, FasterCapFile, dielectricfile, LAYERED_VOID, epsilon, 0.0, 0.0, 0.0, *reference)
+
+    # top: interface with the dielectric above, or vacuum above the window #
+    # (no surface between two dielectrics of the same permittivity) #
+    above = layers[index + 1][2] if index + 1 < len(layers) else LAYERED_VOID
+    holes = [(b[0], b[1], b[4], b[5]) for _, b in boxes if b[2] - LAYERED_TOLERANCE <= yhigh <= b[3] + LAYERED_TOLERANCE]
+    quads = [layered_quad_xz(*cell, yhigh) for cell in layered_split_rectangle(x0, x1, z0, z1, holes)]
+    if quads and above != epsilon:
+      dielectricfile = "Dielectrics/{}_{}-top.txt".format(prefix, name)
+      layered_write_panels(dielectricfile, name, quads)
+      panel_io.insert_dielectric_into_pattern_file(currentpath, FasterCapFile, dielectricfile, above, epsilon, 0.0, 0.0, 0.0, *reference)
+
+    FasterCapFile.write("\n")
 
   FasterCapFile.close()
 

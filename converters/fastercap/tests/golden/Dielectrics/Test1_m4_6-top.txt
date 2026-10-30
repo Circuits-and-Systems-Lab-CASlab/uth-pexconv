@@ -1,0 +1,4 @@
+* m4_6
+* face name	| four coordinates of one face
+
+Q m4_6  -0.98 2.61 0.0     1.12 2.61 0.0     1.12 2.61 2.8     -0.98 2.61 2.8

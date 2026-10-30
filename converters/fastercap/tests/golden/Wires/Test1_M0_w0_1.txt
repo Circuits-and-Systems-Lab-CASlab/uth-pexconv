@@ -1,0 +1,4 @@
+* M0_w0
+* face name	| four coordinates of one face
+
+Q M0_w0  -0.98 0.0 0.0     1.12 0.0 0.0     1.12 0.0 2.8     -0.98 0.0 2.8

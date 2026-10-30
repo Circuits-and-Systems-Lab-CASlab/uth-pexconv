@@ -1,213 +1,141 @@
-C output/Wires/wire_M0_w0_W2.1_T0.1_H2.8-bottom.txt   1e-06    -0.98 -0.1 0.0  + 
-C output/Wires/wire_M0_w0_W2.1_T0.1_H2.8-sides.txt   1e-06    -0.98 -0.1 0.0  + 
-C output/Wires/wire_M0_w0_W2.1_T0.1_H2.8-top.txt   4.1e-06    -0.98 -0.1 0.0 
+C output/Wires/Test1_M0_w0_0.txt   1e-06    0.0 0.0 0.0  + 
+C output/Wires/Test1_M0_w0_1.txt   4.1e-06    0.0 0.0 0.0 
 
-C output/Wires/wire_M1_w1_W0.14_T0.05_H1.4-bottom.txt   4.3e-06    -0.28 0.65 0.0  + 
-C output/Wires/wire_M1_w1_W0.14_T0.05_H1.4-sides.txt   4.3e-06    -0.28 0.65 0.0  + 
-C output/Wires/wire_M1_w1_W0.14_T0.05_H1.4-sides.txt   4.9e-06    -0.28 0.7 0.0  + 
-C output/Wires/wire_M1_w1_W0.14_T0.15_H1.4-sides.txt   4.1e-06    -0.28 0.75 0.0  + 
-C output/Wires/wire_M1_w1_W0.14_T0.15_H1.4-top.txt   4.9e-06    -0.28 0.75 0.0 
+C output/Wires/Test1_M1_w1_0.txt   1e-06    0.0 0.0 0.0  + 
+C output/Wires/Test1_M1_w1_1.txt   4.1e-06    0.0 0.0 0.0  + 
+C output/Wires/Test1_M1_w1_2.txt   4.3e-06    0.0 0.0 0.0  + 
+C output/Wires/Test1_M1_w1_3.txt   4.9e-06    0.0 0.0 0.0 
 
-C output/Wires/wire_M1_w2_W0.14_T0.05_H1.4-bottom.txt   4.3e-06    0.0 0.65 0.0  + 
-C output/Wires/wire_M1_w2_W0.14_T0.05_H1.4-sides.txt   4.3e-06    0.0 0.65 0.0  + 
-C output/Wires/wire_M1_w2_W0.14_T0.05_H1.4-sides.txt   4.9e-06    0.0 0.7 0.0  + 
-C output/Wires/wire_M1_w2_W0.14_T0.15_H1.4-sides.txt   4.1e-06    0.0 0.75 0.0  + 
-C output/Wires/wire_M1_w2_W0.14_T0.15_H1.4-top.txt   4.9e-06    0.0 0.75 0.0 
+C output/Wires/Test1_M1_w2_0.txt   1e-06    0.0 0.0 0.0  + 
+C output/Wires/Test1_M1_w2_1.txt   4.1e-06    0.0 0.0 0.0  + 
+C output/Wires/Test1_M1_w2_2.txt   4.3e-06    0.0 0.0 0.0  + 
+C output/Wires/Test1_M1_w2_3.txt   4.9e-06    0.0 0.0 0.0 
 
-C output/Wires/wire_M1_w3_W0.14_T0.05_H1.4-bottom.txt   4.3e-06    0.28 0.65 0.0  + 
-C output/Wires/wire_M1_w3_W0.14_T0.05_H1.4-sides.txt   4.3e-06    0.28 0.65 0.0  + 
-C output/Wires/wire_M1_w3_W0.14_T0.05_H1.4-sides.txt   4.9e-06    0.28 0.7 0.0  + 
-C output/Wires/wire_M1_w3_W0.14_T0.15_H1.4-sides.txt   4.1e-06    0.28 0.75 0.0  + 
-C output/Wires/wire_M1_w3_W0.14_T0.15_H1.4-top.txt   4.9e-06    0.28 0.75 0.0 
+C output/Wires/Test1_M1_w3_0.txt   1e-06    0.0 0.0 0.0  + 
+C output/Wires/Test1_M1_w3_1.txt   4.1e-06    0.0 0.0 0.0  + 
+C output/Wires/Test1_M1_w3_2.txt   4.3e-06    0.0 0.0 0.0  + 
+C output/Wires/Test1_M1_w3_3.txt   4.9e-06    0.0 0.0 0.0 
 
-D output/Dielectrics/dielectric_p1_1_W2.1_T0.25_H2.8-sides.txt   1e-06 4.1e-06   -0.98 0.0 0.0    -0.97 0.01 0.01 -  
-D output/Dielectrics/dielectric_p1_1_W2.1_T0.25_H2.8-top.txt   7e-06 4.1e-06   -0.98 0.0 0.0    -0.97 0.01 0.01 -  
+D output/Dielectrics/Test1_p1_1-sides.txt   1e-06 4.1e-06   0.0 0.0 0.0    0.07000000000000006 0.125 1.4 -  
+D output/Dielectrics/Test1_p1_1-top.txt   7e-06 4.1e-06   0.0 0.0 0.0    0.07000000000000006 0.125 1.4 -  
 
+D output/Dielectrics/Test1_m1_1-sides.txt   1e-06 7e-06   0.0 0.0 0.0    0.07000000000000006 0.275 1.4 -  
+D output/Dielectrics/Test1_m1_1-top.txt   4.3e-06 7e-06   0.0 0.0 0.0    0.07000000000000006 0.275 1.4 -  
 
-D output/Dielectrics/dielectric_m1_1_W2.1_T0.05_H2.8-sides.txt   1e-06 7e-06   -0.98 0.25 0.0    -0.97 0.26 0.01 -  
-D output/Dielectrics/dielectric_m1_1_W2.1_T0.05_H2.8-top.txt   4.3e-06 7e-06   -0.98 0.25 0.0    -0.97 0.26 0.01 -  
+D output/Dielectrics/Test1_m1_2-sides.txt   1e-06 4.3e-06   0.0 0.0 0.0    0.07000000000000006 0.475 1.4 -  
 
+D output/Dielectrics/Test1_m1_3-sides.txt   1e-06 4.3e-06   0.0 0.0 0.0    0.07000000000000006 0.675 1.4 -  
+D output/Dielectrics/Test1_m1_3-top.txt   4.9e-06 4.3e-06   0.0 0.0 0.0    0.07000000000000006 0.675 1.4 -  
 
-D output/Dielectrics/dielectric_m1_2_W2.1_T0.35_H2.8-sides.txt   1e-06 4.3e-06   -0.98 0.3 0.0    -0.97 0.31 0.01 -  
-D output/Dielectrics/dielectric_m1_2_W2.1_T0.35_H2.8-top.txt   4.3e-06 4.3e-06   -0.98 0.3 0.0    -0.97 0.31 0.01 -  
+D output/Dielectrics/Test1_m1_4-sides.txt   1e-06 4.9e-06   0.0 0.0 0.0    0.07000000000000006 0.725 1.4 -  
+D output/Dielectrics/Test1_m1_4-top.txt   4.1e-06 4.9e-06   0.0 0.0 0.0    0.07000000000000006 0.725 1.4 -  
 
+D output/Dielectrics/Test1_m1_5-sides.txt   1e-06 4.1e-06   0.0 0.0 0.0    0.07000000000000006 0.825 1.4 -  
+D output/Dielectrics/Test1_m1_5-top.txt   4.9e-06 4.1e-06   0.0 0.0 0.0    0.07000000000000006 0.825 1.4 -  
 
-D output/Dielectrics/dielectric_m1_3_W0.7_T0.05_H1.38-sides.txt   1e-06 4.3e-06   -0.98 0.65 0.01    -0.97 0.66 0.02 -  
-D output/Dielectrics/dielectric_m1_3_W0.7_T0.05_H1.38-top.txt   4.9e-06 4.3e-06   -0.98 0.65 0.01    -0.97 0.66 0.02 -  
-D output/Dielectrics/dielectric_m1_3_W2.1_T0.05_H1.38-sides.txt   1e-06 4.3e-06   -0.98 0.65 1.41    -0.97 0.66 1.42 -  
-D output/Dielectrics/dielectric_m1_3_W2.1_T0.05_H1.38-top.txt   4.9e-06 4.3e-06   -0.98 0.65 1.41    -0.97 0.66 1.42 -  
-D output/Dielectrics/dielectric_m1_3_W0.14_T0.05_H1.38-sides.txt   1e-06 4.3e-06   -0.14 0.65 0.01    -0.13 0.66 0.02 -  
-D output/Dielectrics/dielectric_m1_3_W0.14_T0.05_H1.38-top.txt   4.9e-06 4.3e-06   -0.14 0.65 0.01    -0.13 0.66 0.02 -  
-D output/Dielectrics/dielectric_m1_3_W0.14_T0.05_H1.38-sides.txt   1e-06 4.3e-06   0.14 0.65 0.01    0.15 0.66 0.02 -  
-D output/Dielectrics/dielectric_m1_3_W0.14_T0.05_H1.38-top.txt   4.9e-06 4.3e-06   0.14 0.65 0.01    0.15 0.66 0.02 -  
-D output/Dielectrics/dielectric_m1_3_W0.7_T0.05_H1.38-sides.txt   1e-06 4.3e-06   0.42 0.65 0.01    0.43 0.66 0.02 -  
-D output/Dielectrics/dielectric_m1_3_W0.7_T0.05_H1.38-top.txt   4.9e-06 4.3e-06   0.42 0.65 0.01    0.43 0.66 0.02 -  
+D output/Dielectrics/Test1_m2_1-sides.txt   1e-06 4.9e-06   0.0 0.0 0.0    0.07000000000000006 0.925 1.4 -  
+D output/Dielectrics/Test1_m2_1-top.txt   2.9e-06 4.9e-06   0.0 0.0 0.0    0.07000000000000006 0.925 1.4 -  
 
+D output/Dielectrics/Test1_m2_2-sides.txt   1e-06 2.9e-06   0.0 0.0 0.0    0.07000000000000006 1.0499999999999998 1.4 -  
+D output/Dielectrics/Test1_m2_2-top.txt   4.4e-06 2.9e-06   0.0 0.0 0.0    0.07000000000000006 1.0499999999999998 1.4 -  
 
-D output/Dielectrics/dielectric_m1_4_W0.7_T0.05_H1.38-sides.txt   1e-06 4.9e-06   -0.98 0.7 0.01    -0.97 0.71 0.02 -  
-D output/Dielectrics/dielectric_m1_4_W0.7_T0.05_H1.38-top.txt   4.1e-06 4.9e-06   -0.98 0.7 0.01    -0.97 0.71 0.02 -  
-D output/Dielectrics/dielectric_m1_4_W2.1_T0.05_H1.38-sides.txt   1e-06 4.9e-06   -0.98 0.7 1.41    -0.97 0.71 1.42 -  
-D output/Dielectrics/dielectric_m1_4_W2.1_T0.05_H1.38-top.txt   4.1e-06 4.9e-06   -0.98 0.7 1.41    -0.97 0.71 1.42 -  
-D output/Dielectrics/dielectric_m1_4_W0.14_T0.05_H1.38-sides.txt   1e-06 4.9e-06   -0.14 0.7 0.01    -0.13 0.71 0.02 -  
-D output/Dielectrics/dielectric_m1_4_W0.14_T0.05_H1.38-top.txt   4.1e-06 4.9e-06   -0.14 0.7 0.01    -0.13 0.71 0.02 -  
-D output/Dielectrics/dielectric_m1_4_W0.14_T0.05_H1.38-sides.txt   1e-06 4.9e-06   0.14 0.7 0.01    0.15 0.71 0.02 -  
-D output/Dielectrics/dielectric_m1_4_W0.14_T0.05_H1.38-top.txt   4.1e-06 4.9e-06   0.14 0.7 0.01    0.15 0.71 0.02 -  
-D output/Dielectrics/dielectric_m1_4_W0.7_T0.05_H1.38-sides.txt   1e-06 4.9e-06   0.42 0.7 0.01    0.43 0.71 0.02 -  
-D output/Dielectrics/dielectric_m1_4_W0.7_T0.05_H1.38-top.txt   4.1e-06 4.9e-06   0.42 0.7 0.01    0.43 0.71 0.02 -  
+D output/Dielectrics/Test1_m2_3-sides.txt   1e-06 4.4e-06   0.0 0.0 0.0    0.07000000000000006 1.16 1.4 -  
+D output/Dielectrics/Test1_m2_3-top.txt   4.9e-06 4.4e-06   0.0 0.0 0.0    0.07000000000000006 1.16 1.4 -  
 
+D output/Dielectrics/Test1_m2_4-sides.txt   1e-06 4.9e-06   0.0 0.0 0.0    0.07000000000000006 1.1949999999999998 1.4 -  
+D output/Dielectrics/Test1_m2_4-top.txt   2.9e-06 4.9e-06   0.0 0.0 0.0    0.07000000000000006 1.1949999999999998 1.4 -  
 
-D output/Dielectrics/dielectric_m1_5_W0.7_T0.15_H1.38-sides.txt   1e-06 4.1e-06   -0.98 0.75 0.01    -0.97 0.76 0.02 -  
-D output/Dielectrics/dielectric_m1_5_W0.7_T0.15_H1.38-top.txt   4.9e-06 4.1e-06   -0.98 0.75 0.01    -0.97 0.76 0.02 -  
-D output/Dielectrics/dielectric_m1_5_W2.1_T0.15_H1.38-sides.txt   1e-06 4.1e-06   -0.98 0.75 1.41    -0.97 0.76 1.42 -  
-D output/Dielectrics/dielectric_m1_5_W2.1_T0.15_H1.38-top.txt   4.9e-06 4.1e-06   -0.98 0.75 1.41    -0.97 0.76 1.42 -  
-D output/Dielectrics/dielectric_m1_5_W0.14_T0.15_H1.38-sides.txt   1e-06 4.1e-06   -0.14 0.75 0.01    -0.13 0.76 0.02 -  
-D output/Dielectrics/dielectric_m1_5_W0.14_T0.15_H1.38-top.txt   4.9e-06 4.1e-06   -0.14 0.75 0.01    -0.13 0.76 0.02 -  
-D output/Dielectrics/dielectric_m1_5_W0.14_T0.15_H1.38-sides.txt   1e-06 4.1e-06   0.14 0.75 0.01    0.15 0.76 0.02 -  
-D output/Dielectrics/dielectric_m1_5_W0.14_T0.15_H1.38-top.txt   4.9e-06 4.1e-06   0.14 0.75 0.01    0.15 0.76 0.02 -  
-D output/Dielectrics/dielectric_m1_5_W0.7_T0.15_H1.38-sides.txt   1e-06 4.1e-06   0.42 0.75 0.01    0.43 0.76 0.02 -  
-D output/Dielectrics/dielectric_m1_5_W0.7_T0.15_H1.38-top.txt   4.9e-06 4.1e-06   0.42 0.75 0.01    0.43 0.76 0.02 -  
+D output/Dielectrics/Test1_m2_5-sides.txt   1e-06 2.9e-06   0.0 0.0 0.0    0.07000000000000006 1.3199999999999998 1.4 -  
+D output/Dielectrics/Test1_m2_5-top.txt   4.4e-06 2.9e-06   0.0 0.0 0.0    0.07000000000000006 1.3199999999999998 1.4 -  
 
+D output/Dielectrics/Test1_m2_6-sides.txt   1e-06 4.4e-06   0.0 0.0 0.0    0.07000000000000006 1.4449999999999998 1.4 -  
+D output/Dielectrics/Test1_m2_6-top.txt   4.9e-06 4.4e-06   0.0 0.0 0.0    0.07000000000000006 1.4449999999999998 1.4 -  
 
-D output/Dielectrics/dielectric_m2_1_W2.1_T0.05_H2.8-sides.txt   1e-06 4.9e-06   -0.98 0.9 0.0    -0.97 0.91 0.01 -  
-D output/Dielectrics/dielectric_m2_1_W2.1_T0.05_H2.8-top.txt   2.9e-06 4.9e-06   -0.98 0.9 0.0    -0.97 0.91 0.01 -  
+D output/Dielectrics/Test1_m3_1-sides.txt   1e-06 4.9e-06   0.0 0.0 0.0    0.07000000000000006 1.495 1.4 -  
+D output/Dielectrics/Test1_m3_1-top.txt   2.9e-06 4.9e-06   0.0 0.0 0.0    0.07000000000000006 1.495 1.4 -  
 
+D output/Dielectrics/Test1_m3_2-sides.txt   1e-06 2.9e-06   0.0 0.0 0.0    0.07000000000000006 1.62 1.4 -  
+D output/Dielectrics/Test1_m3_2-top.txt   4.4e-06 2.9e-06   0.0 0.0 0.0    0.07000000000000006 1.62 1.4 -  
 
-D output/Dielectrics/dielectric_m2_2_W2.1_T0.2_H2.8-sides.txt   1e-06 2.9e-06   -0.98 0.95 0.0    -0.97 0.96 0.01 -  
-D output/Dielectrics/dielectric_m2_2_W2.1_T0.2_H2.8-top.txt   4.4e-06 2.9e-06   -0.98 0.95 0.0    -0.97 0.96 0.01 -  
+D output/Dielectrics/Test1_m3_3-sides.txt   1e-06 4.4e-06   0.0 0.0 0.0    0.07000000000000006 1.73 1.4 -  
+D output/Dielectrics/Test1_m3_3-top.txt   4.9e-06 4.4e-06   0.0 0.0 0.0    0.07000000000000006 1.73 1.4 -  
 
+D output/Dielectrics/Test1_m3_4-sides.txt   1e-06 4.9e-06   0.0 0.0 0.0    0.07000000000000006 1.7650000000000001 1.4 -  
+D output/Dielectrics/Test1_m3_4-top.txt   2.9e-06 4.9e-06   0.0 0.0 0.0    0.07000000000000006 1.7650000000000001 1.4 -  
 
-D output/Dielectrics/dielectric_m2_3_W2.1_T0.02_H2.8-sides.txt   1e-06 4.4e-06   -0.98 1.15 0.0    -0.97 1.16 0.01 -  
-D output/Dielectrics/dielectric_m2_3_W2.1_T0.02_H2.8-top.txt   4.9e-06 4.4e-06   -0.98 1.15 0.0    -0.97 1.16 0.01 -  
+D output/Dielectrics/Test1_m3_5-sides.txt   1e-06 2.9e-06   0.0 0.0 0.0    0.07000000000000006 1.8900000000000001 1.4 -  
+D output/Dielectrics/Test1_m3_5-top.txt   4.4e-06 2.9e-06   0.0 0.0 0.0    0.07000000000000006 1.8900000000000001 1.4 -  
 
+D output/Dielectrics/Test1_m3_6-sides.txt   1e-06 4.4e-06   0.0 0.0 0.0    0.07000000000000006 2.015 1.4 -  
+D output/Dielectrics/Test1_m3_6-top.txt   4.9e-06 4.4e-06   0.0 0.0 0.0    0.07000000000000006 2.015 1.4 -  
 
-D output/Dielectrics/dielectric_m2_4_W2.1_T0.05_H2.8-sides.txt   1e-06 4.9e-06   -0.98 1.17 0.0    -0.97 1.18 0.01 -  
-D output/Dielectrics/dielectric_m2_4_W2.1_T0.05_H2.8-top.txt   2.9e-06 4.9e-06   -0.98 1.17 0.0    -0.97 1.18 0.01 -  
+D output/Dielectrics/Test1_m4_1-sides.txt   1e-06 4.9e-06   0.0 0.0 0.0    0.07000000000000006 2.065 1.4 -  
+D output/Dielectrics/Test1_m4_1-top.txt   2.9e-06 4.9e-06   0.0 0.0 0.0    0.07000000000000006 2.065 1.4 -  
 
+D output/Dielectrics/Test1_m4_2-sides.txt   1e-06 2.9e-06   0.0 0.0 0.0    0.07000000000000006 2.19 1.4 -  
+D output/Dielectrics/Test1_m4_2-top.txt   4.4e-06 2.9e-06   0.0 0.0 0.0    0.07000000000000006 2.19 1.4 -  
 
-D output/Dielectrics/dielectric_m2_5_W2.1_T0.2_H2.8-sides.txt   1e-06 2.9e-06   -0.98 1.22 0.0    -0.97 1.23 0.01 -  
-D output/Dielectrics/dielectric_m2_5_W2.1_T0.2_H2.8-top.txt   4.4e-06 2.9e-06   -0.98 1.22 0.0    -0.97 1.23 0.01 -  
+D output/Dielectrics/Test1_m4_3-sides.txt   1e-06 4.4e-06   0.0 0.0 0.0    0.07000000000000006 2.3 1.4 -  
+D output/Dielectrics/Test1_m4_3-top.txt   4.9e-06 4.4e-06   0.0 0.0 0.0    0.07000000000000006 2.3 1.4 -  
 
+D output/Dielectrics/Test1_m4_4-sides.txt   1e-06 4.9e-06   0.0 0.0 0.0    0.07000000000000006 2.335 1.4 -  
+D output/Dielectrics/Test1_m4_4-top.txt   2.9e-06 4.9e-06   0.0 0.0 0.0    0.07000000000000006 2.335 1.4 -  
 
-D output/Dielectrics/dielectric_m2_6_W2.1_T0.05_H2.8-sides.txt   1e-06 4.4e-06   -0.98 1.42 0.0    -0.97 1.43 0.01 -  
-D output/Dielectrics/dielectric_m2_6_W2.1_T0.05_H2.8-top.txt   4.9e-06 4.4e-06   -0.98 1.42 0.0    -0.97 1.43 0.01 -  
+D output/Dielectrics/Test1_m4_5-sides.txt   1e-06 2.9e-06   0.0 0.0 0.0    0.07000000000000006 2.46 1.4 -  
+D output/Dielectrics/Test1_m4_5-top.txt   4.4e-06 2.9e-06   0.0 0.0 0.0    0.07000000000000006 2.46 1.4 -  
 
+D output/Dielectrics/Test1_m4_6-sides.txt   1e-06 4.4e-06   0.0 0.0 0.0    0.07000000000000006 2.585 1.4 -  
+D output/Dielectrics/Test1_m4_6-top.txt   4.9e-06 4.4e-06   0.0 0.0 0.0    0.07000000000000006 2.585 1.4 -  
 
-D output/Dielectrics/dielectric_m3_1_W2.1_T0.05_H2.8-sides.txt   1e-06 4.9e-06   -0.98 1.47 0.0    -0.97 1.48 0.01 -  
-D output/Dielectrics/dielectric_m3_1_W2.1_T0.05_H2.8-top.txt   2.9e-06 4.9e-06   -0.98 1.47 0.0    -0.97 1.48 0.01 -  
+D output/Dielectrics/Test1_m5_1-sides.txt   1e-06 4.9e-06   0.0 0.0 0.0    0.07000000000000006 2.635 1.4 -  
+D output/Dielectrics/Test1_m5_1-top.txt   2.9e-06 4.9e-06   0.0 0.0 0.0    0.07000000000000006 2.635 1.4 -  
 
+D output/Dielectrics/Test1_m5_2-sides.txt   1e-06 2.9e-06   0.0 0.0 0.0    0.07000000000000006 2.76 1.4 -  
+D output/Dielectrics/Test1_m5_2-top.txt   4.4e-06 2.9e-06   0.0 0.0 0.0    0.07000000000000006 2.76 1.4 -  
 
-D output/Dielectrics/dielectric_m3_2_W2.1_T0.2_H2.8-sides.txt   1e-06 2.9e-06   -0.98 1.52 0.0    -0.97 1.53 0.01 -  
-D output/Dielectrics/dielectric_m3_2_W2.1_T0.2_H2.8-top.txt   4.4e-06 2.9e-06   -0.98 1.52 0.0    -0.97 1.53 0.01 -  
+D output/Dielectrics/Test1_m5_3-sides.txt   1e-06 4.4e-06   0.0 0.0 0.0    0.07000000000000006 2.87 1.4 -  
+D output/Dielectrics/Test1_m5_3-top.txt   4.9e-06 4.4e-06   0.0 0.0 0.0    0.07000000000000006 2.87 1.4 -  
 
+D output/Dielectrics/Test1_m5_4-sides.txt   1e-06 4.9e-06   0.0 0.0 0.0    0.07000000000000006 2.9050000000000002 1.4 -  
+D output/Dielectrics/Test1_m5_4-top.txt   2.9e-06 4.9e-06   0.0 0.0 0.0    0.07000000000000006 2.9050000000000002 1.4 -  
 
-D output/Dielectrics/dielectric_m3_3_W2.1_T0.02_H2.8-sides.txt   1e-06 4.4e-06   -0.98 1.72 0.0    -0.97 1.73 0.01 -  
-D output/Dielectrics/dielectric_m3_3_W2.1_T0.02_H2.8-top.txt   4.9e-06 4.4e-06   -0.98 1.72 0.0    -0.97 1.73 0.01 -  
+D output/Dielectrics/Test1_m5_5-sides.txt   1e-06 2.9e-06   0.0 0.0 0.0    0.07000000000000006 3.0300000000000002 1.4 -  
+D output/Dielectrics/Test1_m5_5-top.txt   4.4e-06 2.9e-06   0.0 0.0 0.0    0.07000000000000006 3.0300000000000002 1.4 -  
 
+D output/Dielectrics/Test1_m5_6-sides.txt   1e-06 4.4e-06   0.0 0.0 0.0    0.07000000000000006 3.1550000000000002 1.4 -  
+D output/Dielectrics/Test1_m5_6-top.txt   4.9e-06 4.4e-06   0.0 0.0 0.0    0.07000000000000006 3.1550000000000002 1.4 -  
 
-D output/Dielectrics/dielectric_m3_4_W2.1_T0.05_H2.8-sides.txt   1e-06 4.9e-06   -0.98 1.74 0.0    -0.97 1.75 0.01 -  
-D output/Dielectrics/dielectric_m3_4_W2.1_T0.05_H2.8-top.txt   2.9e-06 4.9e-06   -0.98 1.74 0.0    -0.97 1.75 0.01 -  
+D output/Dielectrics/Test1_m6_1-sides.txt   1e-06 4.9e-06   0.0 0.0 0.0    0.07000000000000006 3.23 1.4 -  
+D output/Dielectrics/Test1_m6_1-top.txt   4.4e-06 4.9e-06   0.0 0.0 0.0    0.07000000000000006 3.23 1.4 -  
 
+D output/Dielectrics/Test1_m6_2-sides.txt   1e-06 4.4e-06   0.0 0.0 0.0    0.07000000000000006 3.53 1.4 -  
 
-D output/Dielectrics/dielectric_m3_5_W2.1_T0.2_H2.8-sides.txt   1e-06 2.9e-06   -0.98 1.79 0.0    -0.97 1.8 0.01 -  
-D output/Dielectrics/dielectric_m3_5_W2.1_T0.2_H2.8-top.txt   4.4e-06 2.9e-06   -0.98 1.79 0.0    -0.97 1.8 0.01 -  
+D output/Dielectrics/Test1_m6_3-sides.txt   1e-06 4.4e-06   0.0 0.0 0.0    0.07000000000000006 3.83 1.4 -  
+D output/Dielectrics/Test1_m6_3-top.txt   4.9e-06 4.4e-06   0.0 0.0 0.0    0.07000000000000006 3.83 1.4 -  
 
+D output/Dielectrics/Test1_m6_4-sides.txt   1e-06 4.9e-06   0.0 0.0 0.0    0.07000000000000006 3.9299999999999997 1.4 -  
+D output/Dielectrics/Test1_m6_4-top.txt   4.4e-06 4.9e-06   0.0 0.0 0.0    0.07000000000000006 3.9299999999999997 1.4 -  
 
-D output/Dielectrics/dielectric_m3_6_W2.1_T0.05_H2.8-sides.txt   1e-06 4.4e-06   -0.98 1.99 0.0    -0.97 2.0 0.01 -  
-D output/Dielectrics/dielectric_m3_6_W2.1_T0.05_H2.8-top.txt   4.9e-06 4.4e-06   -0.98 1.99 0.0    -0.97 2.0 0.01 -  
+D output/Dielectrics/Test1_m6_5-sides.txt   1e-06 4.4e-06   0.0 0.0 0.0    0.07000000000000006 4.33 1.4 -  
+D output/Dielectrics/Test1_m6_5-top.txt   4.9e-06 4.4e-06   0.0 0.0 0.0    0.07000000000000006 4.33 1.4 -  
 
+D output/Dielectrics/Test1_m7_1-sides.txt   1e-06 4.9e-06   0.0 0.0 0.0    0.07000000000000006 4.73 1.4 -  
+D output/Dielectrics/Test1_m7_1-top.txt   4.4e-06 4.9e-06   0.0 0.0 0.0    0.07000000000000006 4.73 1.4 -  
 
-D output/Dielectrics/dielectric_m4_1_W2.1_T0.05_H2.8-sides.txt   1e-06 4.9e-06   -0.98 2.04 0.0    -0.97 2.05 0.01 -  
-D output/Dielectrics/dielectric_m4_1_W2.1_T0.05_H2.8-top.txt   2.9e-06 4.9e-06   -0.98 2.04 0.0    -0.97 2.05 0.01 -  
+D output/Dielectrics/Test1_m7_2-sides.txt   1e-06 4.4e-06   0.0 0.0 0.0    0.07000000000000006 5.155 1.4 -  
 
+D output/Dielectrics/Test1_m7_3-sides.txt   1e-06 4.4e-06   0.0 0.0 0.0    0.07000000000000006 5.555 1.4 -  
+D output/Dielectrics/Test1_m7_3-top.txt   4.9e-06 4.4e-06   0.0 0.0 0.0    0.07000000000000006 5.555 1.4 -  
 
-D output/Dielectrics/dielectric_m4_2_W2.1_T0.2_H2.8-sides.txt   1e-06 2.9e-06   -0.98 2.09 0.0    -0.97 2.1 0.01 -  
-D output/Dielectrics/dielectric_m4_2_W2.1_T0.2_H2.8-top.txt   4.4e-06 2.9e-06   -0.98 2.09 0.0    -0.97 2.1 0.01 -  
+D output/Dielectrics/Test1_m7_4-sides.txt   1e-06 4.9e-06   0.0 0.0 0.0    0.07000000000000006 5.640000000000001 1.4 -  
+D output/Dielectrics/Test1_m7_4-top.txt   4.4e-06 4.9e-06   0.0 0.0 0.0    0.07000000000000006 5.640000000000001 1.4 -  
 
+D output/Dielectrics/Test1_m7_5-sides.txt   1e-06 4.4e-06   0.0 0.0 0.0    0.07000000000000006 6.215 1.4 -  
+D output/Dielectrics/Test1_m7_5-top.txt   6e-06 4.4e-06   0.0 0.0 0.0    0.07000000000000006 6.215 1.4 -  
 
-D output/Dielectrics/dielectric_m4_3_W2.1_T0.02_H2.8-sides.txt   1e-06 4.4e-06   -0.98 2.29 0.0    -0.97 2.3 0.01 -  
-D output/Dielectrics/dielectric_m4_3_W2.1_T0.02_H2.8-top.txt   4.9e-06 4.4e-06   -0.98 2.29 0.0    -0.97 2.3 0.01 -  
+D output/Dielectrics/Test1_air_1-sides.txt   1e-06 6e-06   0.0 0.0 0.0    0.07000000000000006 6.880000000000001 1.4 -  
+D output/Dielectrics/Test1_air_1-top.txt   2.9e-06 6e-06   0.0 0.0 0.0    0.07000000000000006 6.880000000000001 1.4 -  
 
-
-D output/Dielectrics/dielectric_m4_4_W2.1_T0.05_H2.8-sides.txt   1e-06 4.9e-06   -0.98 2.31 0.0    -0.97 2.32 0.01 -  
-D output/Dielectrics/dielectric_m4_4_W2.1_T0.05_H2.8-top.txt   2.9e-06 4.9e-06   -0.98 2.31 0.0    -0.97 2.32 0.01 -  
-
-
-D output/Dielectrics/dielectric_m4_5_W2.1_T0.2_H2.8-sides.txt   1e-06 2.9e-06   -0.98 2.36 0.0    -0.97 2.37 0.01 -  
-D output/Dielectrics/dielectric_m4_5_W2.1_T0.2_H2.8-top.txt   4.4e-06 2.9e-06   -0.98 2.36 0.0    -0.97 2.37 0.01 -  
-
-
-D output/Dielectrics/dielectric_m4_6_W2.1_T0.05_H2.8-sides.txt   1e-06 4.4e-06   -0.98 2.56 0.0    -0.97 2.57 0.01 -  
-D output/Dielectrics/dielectric_m4_6_W2.1_T0.05_H2.8-top.txt   4.9e-06 4.4e-06   -0.98 2.56 0.0    -0.97 2.57 0.01 -  
-
-
-D output/Dielectrics/dielectric_m5_1_W2.1_T0.05_H2.8-sides.txt   1e-06 4.9e-06   -0.98 2.61 0.0    -0.97 2.62 0.01 -  
-D output/Dielectrics/dielectric_m5_1_W2.1_T0.05_H2.8-top.txt   2.9e-06 4.9e-06   -0.98 2.61 0.0    -0.97 2.62 0.01 -  
-
-
-D output/Dielectrics/dielectric_m5_2_W2.1_T0.2_H2.8-sides.txt   1e-06 2.9e-06   -0.98 2.66 0.0    -0.97 2.67 0.01 -  
-D output/Dielectrics/dielectric_m5_2_W2.1_T0.2_H2.8-top.txt   4.4e-06 2.9e-06   -0.98 2.66 0.0    -0.97 2.67 0.01 -  
-
-
-D output/Dielectrics/dielectric_m5_3_W2.1_T0.02_H2.8-sides.txt   1e-06 4.4e-06   -0.98 2.86 0.0    -0.97 2.87 0.01 -  
-D output/Dielectrics/dielectric_m5_3_W2.1_T0.02_H2.8-top.txt   4.9e-06 4.4e-06   -0.98 2.86 0.0    -0.97 2.87 0.01 -  
-
-
-D output/Dielectrics/dielectric_m5_4_W2.1_T0.05_H2.8-sides.txt   1e-06 4.9e-06   -0.98 2.88 0.0    -0.97 2.89 0.01 -  
-D output/Dielectrics/dielectric_m5_4_W2.1_T0.05_H2.8-top.txt   2.9e-06 4.9e-06   -0.98 2.88 0.0    -0.97 2.89 0.01 -  
-
-
-D output/Dielectrics/dielectric_m5_5_W2.1_T0.2_H2.8-sides.txt   1e-06 2.9e-06   -0.98 2.93 0.0    -0.97 2.94 0.01 -  
-D output/Dielectrics/dielectric_m5_5_W2.1_T0.2_H2.8-top.txt   4.4e-06 2.9e-06   -0.98 2.93 0.0    -0.97 2.94 0.01 -  
-
-
-D output/Dielectrics/dielectric_m5_6_W2.1_T0.05_H2.8-sides.txt   1e-06 4.4e-06   -0.98 3.13 0.0    -0.97 3.14 0.01 -  
-D output/Dielectrics/dielectric_m5_6_W2.1_T0.05_H2.8-top.txt   4.9e-06 4.4e-06   -0.98 3.13 0.0    -0.97 3.14 0.01 -  
-
-
-D output/Dielectrics/dielectric_m6_1_W2.1_T0.1_H2.8-sides.txt   1e-06 4.9e-06   -0.98 3.18 0.0    -0.97 3.19 0.01 -  
-D output/Dielectrics/dielectric_m6_1_W2.1_T0.1_H2.8-top.txt   4.4e-06 4.9e-06   -0.98 3.18 0.0    -0.97 3.19 0.01 -  
-
-
-D output/Dielectrics/dielectric_m6_2_W2.1_T0.5_H2.8-sides.txt   1e-06 4.4e-06   -0.98 3.28 0.0    -0.97 3.29 0.01 -  
-D output/Dielectrics/dielectric_m6_2_W2.1_T0.5_H2.8-top.txt   4.4e-06 4.4e-06   -0.98 3.28 0.0    -0.97 3.29 0.01 -  
-
-
-D output/Dielectrics/dielectric_m6_3_W2.1_T0.1_H2.8-sides.txt   1e-06 4.4e-06   -0.98 3.78 0.0    -0.97 3.79 0.01 -  
-D output/Dielectrics/dielectric_m6_3_W2.1_T0.1_H2.8-top.txt   4.9e-06 4.4e-06   -0.98 3.78 0.0    -0.97 3.79 0.01 -  
-
-
-D output/Dielectrics/dielectric_m6_4_W2.1_T0.1_H2.8-sides.txt   1e-06 4.9e-06   -0.98 3.88 0.0    -0.97 3.89 0.01 -  
-D output/Dielectrics/dielectric_m6_4_W2.1_T0.1_H2.8-top.txt   4.4e-06 4.9e-06   -0.98 3.88 0.0    -0.97 3.89 0.01 -  
-
-
-D output/Dielectrics/dielectric_m6_5_W2.1_T0.7_H2.8-sides.txt   1e-06 4.4e-06   -0.98 3.98 0.0    -0.97 3.99 0.01 -  
-D output/Dielectrics/dielectric_m6_5_W2.1_T0.7_H2.8-top.txt   4.9e-06 4.4e-06   -0.98 3.98 0.0    -0.97 3.99 0.01 -  
-
-
-D output/Dielectrics/dielectric_m7_1_W2.1_T0.1_H2.8-sides.txt   1e-06 4.9e-06   -0.98 4.68 0.0    -0.97 4.69 0.01 -  
-D output/Dielectrics/dielectric_m7_1_W2.1_T0.1_H2.8-top.txt   4.4e-06 4.9e-06   -0.98 4.68 0.0    -0.97 4.69 0.01 -  
-
-
-D output/Dielectrics/dielectric_m7_2_W2.1_T0.75_H2.8-sides.txt   1e-06 4.4e-06   -0.98 4.78 0.0    -0.97 4.79 0.01 -  
-D output/Dielectrics/dielectric_m7_2_W2.1_T0.75_H2.8-top.txt   4.4e-06 4.4e-06   -0.98 4.78 0.0    -0.97 4.79 0.01 -  
-
-
-D output/Dielectrics/dielectric_m7_3_W2.1_T0.05_H2.8-sides.txt   1e-06 4.4e-06   -0.98 5.53 0.0    -0.97 5.54 0.01 -  
-D output/Dielectrics/dielectric_m7_3_W2.1_T0.05_H2.8-top.txt   4.9e-06 4.4e-06   -0.98 5.53 0.0    -0.97 5.54 0.01 -  
-
-
-D output/Dielectrics/dielectric_m7_4_W2.1_T0.12_H2.8-sides.txt   1e-06 4.9e-06   -0.98 5.58 0.0    -0.97 5.59 0.01 -  
-D output/Dielectrics/dielectric_m7_4_W2.1_T0.12_H2.8-top.txt   4.4e-06 4.9e-06   -0.98 5.58 0.0    -0.97 5.59 0.01 -  
-
-
-D output/Dielectrics/dielectric_m7_5_W2.1_T1.03_H2.8-sides.txt   1e-06 4.4e-06   -0.98 5.7 0.0    -0.97 5.71 0.01 -  
-D output/Dielectrics/dielectric_m7_5_W2.1_T1.03_H2.8-top.txt   6e-06 4.4e-06   -0.98 5.7 0.0    -0.97 5.71 0.01 -  
-
-
-D output/Dielectrics/dielectric_air_1_W2.1_T0.3_H2.8-sides.txt   1e-06 6e-06   -0.98 6.73 0.0    -0.97 6.74 0.01 -  
-D output/Dielectrics/dielectric_air_1_W2.1_T0.3_H2.8-top.txt   2.9e-06 6e-06   -0.98 6.73 0.0    -0.97 6.74 0.01 -  
-
-
-D output/Dielectrics/dielectric_air_2_W2.1_T6.9_H2.8-sides.txt   1e-06 2.9e-06   -0.98 7.03 0.0    -0.97 7.04 0.01 -  
-
+D output/Dielectrics/Test1_air_2-sides.txt   1e-06 2.9e-06   0.0 0.0 0.0    0.07000000000000006 10.48 1.4 -  
+D output/Dielectrics/Test1_air_2-top.txt   1e-06 2.9e-06   0.0 0.0 0.0    0.07000000000000006 10.48 1.4 -  
 

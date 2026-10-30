@@ -1,5 +1,0 @@
-* 2.1x0.1x2.8um box
-* Layer of Box Dielectric m6_1
-* face name	| four coordinates of one face
-
-Q dielectric_m6_1  0.0 0.1 0.0     2.1 0.1 0.0     2.1 0.1 2.8     0.0 0.1 2.8

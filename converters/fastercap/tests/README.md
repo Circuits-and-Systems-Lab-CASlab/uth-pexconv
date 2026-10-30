@@ -13,9 +13,14 @@ Tests `Universal2FasterCap.py` against `tests/fixtures/universal_input/Test1`.
 To regenerate `tests/golden/` after an intentional output change:
 
 ```
-cd converters/fastercap/src
-python3 Universal2FasterCap.py ../../../tests/fixtures/universal_input <tmp>/output standard 3D
+cd <tmp>
+python3 <repo>/converters/fastercap/src/Universal2FasterCap.py <repo>/converters/fastercap/tests/fixtures/universal_input output standard 3D
+rm -r <repo>/converters/fastercap/tests/golden
+cp -r output <repo>/converters/fastercap/tests/golden
 ```
+
+The output folder must be named `output` and given relative to the current
+directory, as `wires.lst` embeds it in every path.
 
 ## test_c25d2fastercap.py
 

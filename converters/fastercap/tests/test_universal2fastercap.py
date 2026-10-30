@@ -24,9 +24,10 @@ import pytest
 # literally as part of `currentpath`, so a name mismatch will show up
 # as a spurious diff on every single output file, not a real bug.
 #
-# KT-NOTE: To regenerate the golden file:
-#   cd converters/fastercap/src
-#   python3 Universal2FasterCap.py ../../../tests/fixtures/universal_input <tmp>/output standard 3D
+# KT-NOTE: To regenerate the golden file (see tests/README.md):
+#   cd <tmp>
+#   python3 <repo>/converters/fastercap/src/Universal2FasterCap.py <repo>/converters/fastercap/tests/fixtures/universal_input output standard 3D
+#   then replace tests/golden/ with <tmp>/output
 
 THIS_DIR = Path(__file__).parent
 FIXTURES_DIR = THIS_DIR / "fixtures"
